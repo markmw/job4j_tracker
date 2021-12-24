@@ -12,11 +12,11 @@ public class Calculator {
     }
 
     public static int minus(int y) {
-        return x - y;
+        return y - x;
     }
 
     public int divide(int y) {
-        return x / y;
+        return y / x;
     }
 
     public int sumAllOperation(int y) {
