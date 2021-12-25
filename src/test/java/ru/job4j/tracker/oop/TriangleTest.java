@@ -13,7 +13,7 @@ public class TriangleTest {
         Point c = new Point(0, 4);
         Triangle triangle = new Triangle(a, b, c);
         double rsl = triangle.area();
-        assertThat(rsl, closeTo(6.928203230275509, 0.000000000000000001));
+        assertThat(rsl, closeTo(8, 0.001));
     }
 
     @Test
