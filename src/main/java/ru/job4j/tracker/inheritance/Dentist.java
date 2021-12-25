@@ -8,8 +8,7 @@ public class Dentist extends Doctor {
                    String education,
                    String birthday,
                    String direction,
-                   boolean assistant)
-    {
+                   boolean assistant) {
         super(name, surname, education, birthday, direction);
         this.assistant = assistant;
     }

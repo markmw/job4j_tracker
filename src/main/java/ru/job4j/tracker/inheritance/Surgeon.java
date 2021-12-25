@@ -8,8 +8,7 @@ public class Surgeon extends Doctor {
                    String education,
                    String birthday,
                    String direction,
-                   int experience)
-    {
+                   int experience) {
         super(name, surname, education, birthday, direction);
         this.experience = experience;
     }

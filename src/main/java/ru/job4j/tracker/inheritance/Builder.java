@@ -8,8 +8,7 @@ public class Builder extends Engineer {
                    String education,
                    String birthday,
                    String speciality,
-                   double weight)
-    {
+                   double weight) {
         super(name, surname, education, birthday, speciality);
         this.weight = weight;
     }

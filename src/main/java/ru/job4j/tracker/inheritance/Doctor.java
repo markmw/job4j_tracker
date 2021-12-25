@@ -7,8 +7,7 @@ public class Doctor extends Profession {
                   String surname,
                   String education,
                   String birthday,
-                  String direction)
-    {
+                  String direction) {
         super(name, surname, education, birthday);
         this.direction = direction;
     }
