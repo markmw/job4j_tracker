@@ -11,7 +11,7 @@ public class PointTest {
         Point a = new Point(2, 0);
         Point b = new Point(0, 2);
         double rsl = a.distance(b);
-        assertThat(rsl, closeTo(2.8284271247461903, 0.001));
+        assertThat(rsl, closeTo(2.828, 0.001));
     }
 
     @Test

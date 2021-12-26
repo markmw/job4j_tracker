@@ -12,9 +12,6 @@ public class Engineer extends Profession {
         this.speciality = speciality;
     }
 
-    public Engineer() {
-    }
-
     public String getSpeciality() {
         return speciality;
     }

@@ -13,9 +13,6 @@ public class Programmer extends Engineer {
         this.lang = lang;
     }
 
-    public Programmer() {
-    }
-
     public String getLang() {
         return lang;
     }

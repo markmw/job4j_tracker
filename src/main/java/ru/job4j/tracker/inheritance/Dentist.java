@@ -13,9 +13,6 @@ public class Dentist extends Doctor {
         this.assistant = assistant;
     }
 
-    public Dentist() {
-    }
-
     public boolean getAssistan() {
         return assistant;
     }

@@ -13,9 +13,6 @@ public class Builder extends Engineer {
         this.weight = weight;
     }
 
-    public Builder() {
-    }
-
     public double getWeight() {
         return weight;
     }

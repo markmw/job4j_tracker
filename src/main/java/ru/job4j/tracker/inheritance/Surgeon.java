@@ -13,9 +13,6 @@ public class Surgeon extends Doctor {
         this.experience = experience;
     }
 
-    public Surgeon() {
-    }
-
     public int getExperience() {
         return experience;
     }

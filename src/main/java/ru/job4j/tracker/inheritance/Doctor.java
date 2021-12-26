@@ -12,9 +12,6 @@ public class Doctor extends Profession {
         this.direction = direction;
     }
 
-    public Doctor() {
-    }
-
     public String getDirection() {
         return direction;
     }
