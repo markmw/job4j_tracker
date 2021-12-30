@@ -72,9 +72,7 @@ public class StartUI {
                     } else {
                         System.out.println("Not found: " + moniker);
                     }
-            } else if (select != 6) {
-                System.out.println("User chose: " + select);
-            } else {
+            } else if (select == 6) {
                 run = false;
                 System.out.println("Exit Program");
             }
