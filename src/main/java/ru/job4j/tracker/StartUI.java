@@ -11,7 +11,13 @@ public class StartUI {
             showMenu();
             System.out.print("Select: ");
             int select = Integer.parseInt(scanner.nextLine());
-             else if (select == 1) {
+            if (select == 0) {
+                System.out.println("Add new Item...");
+                System.out.print("Enter name: ");
+                String name = scanner.nextLine();
+                Item item = new Item(name);
+                tracker.add(item);
+            } else if (select == 1) {
                 System.out.println("Show all items...");
                 Item[] all = tracker.findAll();
                 if (all.length > 0) {
