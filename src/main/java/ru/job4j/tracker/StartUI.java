@@ -17,6 +17,16 @@ public class StartUI {
                 String name = scanner.nextLine();
                 Item item = new Item(name);
                 tracker.add(item);
+            } else if (select == 1) {
+                System.out.println("Show all items...");
+                Item[] all = tracker.findAll();
+                if (all.length > 0) {
+                    for (Item item : all) {
+                        System.out.println(item);
+                    }
+                } else {
+                    System.out.println("The store does not contain tickets yet");
+                }
             } else if (select == 2) {
                 System.out.println("Edit item...");
                 System.out.println("Enter id: ");
