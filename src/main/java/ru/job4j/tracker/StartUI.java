@@ -50,6 +50,16 @@ public class StartUI {
                 } else {
                     System.out.println("Delete failed");
                 }
+            } else if (select == 4) {
+                System.out.println("Find item by id...");
+                System.out.print("Enter id: ");
+                int findId = Integer.parseInt(scanner.nextLine());
+                Item mark = tracker.findById(findId);
+                if (mark != null) {
+                    System.out.println(mark);
+                } else {
+                    System.out.println("Not found: " + mark);
+                }
             } else if (select == 5) {
                     System.out.println("Find items by name...");
                     System.out.println("Enter name: ");
