@@ -27,6 +27,19 @@ public class StartUI {
                 } else {
                     System.out.println("The store does not contain tickets yet");
                 }
+            } else if (select == 2) {
+                System.out.println("Edit item...");
+                System.out.print("Enter id: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                System.out.print("Enter name: ");
+                String forename = scanner.nextLine();
+                Item point = new Item(forename);
+                tracker.replace(id, point);
+                if (tracker.replace(id, point)) {
+                    System.out.println("Well done!");
+                } else {
+                    System.out.println("Ops..try again");
+                }
             } else if (select == 3) {
                 System.out.println("Delete item...");
                 System.out.println("Enter id: ");
