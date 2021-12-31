@@ -40,6 +40,16 @@ public class StartUI {
                 } else {
                     System.out.println("Ops..try again");
                 }
+            } else if (select == 3) {
+                System.out.println("Delete item...");
+                System.out.print("Enter id: ");
+                int rqid = Integer.parseInt(scanner.nextLine());
+                boolean delete = tracker.delete(rqid);
+                if (delete) {
+                    System.out.println("Item deleted");
+                } else {
+                    System.out.println("Delete failed");
+                }
             } else if (select == 4) {
                 System.out.println("Find item by id...");
                 System.out.println("Enter id: ");
