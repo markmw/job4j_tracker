@@ -60,6 +60,18 @@ public class StartUI {
                 } else {
                     System.out.println("Not found: " + mark);
                 }
+            } else if (select == 5) {
+                    System.out.println("Find items by name...");
+                    System.out.print("Enter name: ");
+                    String moniker = scanner.nextLine();
+                    Item[] queu = tracker.findByName(moniker);
+                    if (queu.length > 0) {
+                        for (Item item : queu) {
+                        System.out.println(queu);
+                        }
+                    } else {
+                        System.out.println("Not found: " + moniker);
+                    }
             } else if (select == 6) {
                 run = false;
                 System.out.println("Exit Program");
