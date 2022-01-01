@@ -56,7 +56,7 @@ public class StartUI {
                 if (mark != null) {
                     System.out.println(mark);
                 } else {
-                    System.out.println("Not found: " + mark);
+                    System.out.println("Not found id: " + findId);
                 }
             } else if (select == 5) {
                     System.out.println("Find items by name...");
