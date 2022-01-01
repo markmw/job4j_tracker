@@ -24,7 +24,7 @@ public class StartUI {
                 }
             } else if (select == 2) {
                 System.out.println("Edit item...");
-                int id = Integer.parseInt(input.askStr("Enter id: "));
+                int id = input.askInt("Enter id: ");
                 String forename = input.askStr("Enter name: ");
                 Item point = new Item(forename);
                 if (tracker.replace(id, point)) {
@@ -34,7 +34,7 @@ public class StartUI {
                 }
             } else if (select == 3) {
                 System.out.println("Delete item...");
-                int rqid = Integer.parseInt(input.askStr("Enter id: "));
+                int rqid = input.askInt("Enter id: ");
                 if (tracker.delete(rqid)) {
                     System.out.println("Item deleted");
                 } else {
@@ -42,7 +42,7 @@ public class StartUI {
                 }
             } else if (select == 4) {
                 System.out.println("Find item by id...");
-                int findId = Integer.parseInt(input.askStr("Enter id: "));
+                int findId = input.askInt("Enter id: ");
                 Item mark = tracker.findById(findId);
                 if (mark != null) {
                     System.out.println(mark);
