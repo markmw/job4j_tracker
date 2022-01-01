@@ -65,10 +65,10 @@ public class StartUI {
                     Item[] queu = tracker.findByName(moniker);
                     if (queu.length > 0) {
                         for (Item item : queu) {
-                        System.out.println(queu);
+                            System.out.println(queu);
                         }
                     } else {
-                        System.out.println("Not found: " + moniker);
+                        System.out.println("Not found name: " + moniker);
                     }
             } else if (select == 6) {
                 run = false;
