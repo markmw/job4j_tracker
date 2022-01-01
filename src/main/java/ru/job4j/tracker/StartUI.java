@@ -43,8 +43,7 @@ public class StartUI {
                 System.out.println("Delete item...");
                 System.out.print("Enter id: ");
                 int rqid = Integer.parseInt(scanner.nextLine());
-                boolean delete = tracker.delete(rqid);
-                if (delete) {
+                if (tracker.delete(rqid)) {
                     System.out.println("Item deleted");
                 } else {
                     System.out.println("Delete failed");
