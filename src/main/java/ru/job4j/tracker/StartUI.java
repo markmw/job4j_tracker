@@ -34,7 +34,6 @@ public class StartUI {
                 System.out.print("Enter name: ");
                 String forename = scanner.nextLine();
                 Item point = new Item(forename);
-                tracker.replace(id, point);
                 if (tracker.replace(id, point)) {
                     System.out.println("Well done!");
                 } else {
