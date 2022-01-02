@@ -95,7 +95,32 @@ public class StartUITest {
         ));
     }
 
-
+    @Test
+    public void whenEditItem() {
+        Output out = new StubOutput();
+        Tracker tracker = new Tracker();
+        Item item = tracker.add(new Item("Edited item"));
+        String replacedName = "New item name";
+        Input in = new StubInput(
+                new String[] {"0", String.valueOf(item.getId()), replacedName, "1"}
+        );
+        UserAction[] actions = {
+                new EditAction(out),
+                new ExitAction(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(out.toString(), is(
+                "Menu:" + ln
+                        + "0. Edit Item" + ln
+                        + "1. Exit Program" + ln
+                        + "Edit item..." + ln
+                        + "Well done!" + ln
+                        + "Menu:" + ln
+                        + "0. Edit Item" + ln
+                        + "1. Exit Program" + ln
+        ));
+    }
 
     @Test
     public void whenDeleteItem() {
