@@ -19,7 +19,7 @@ public class FindNameAction implements UserAction {
         Item[] queu = tracker.findByName(moniker);
         if (queu.length > 0) {
             for (Item item : queu) {
-                out.println(queu);
+                out.println(item);
             }
         } else {
             out.println("Not found name: " + moniker);
