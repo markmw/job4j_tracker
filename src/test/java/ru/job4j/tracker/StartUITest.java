@@ -2,6 +2,8 @@ package ru.job4j.tracker;
 
 import org.junit.Test;
 
+import java.time.format.DateTimeFormatter;
+
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
@@ -48,6 +50,31 @@ public class StartUITest {
     }
 
     @Test
+    public void whenShowAllActionsThenOneShowed() {
+        Output out = new StubOutput();
+        Tracker tracker = new Tracker();
+        Item add = tracker.add(new Item("Item name"));
+        Item[] item = tracker.findAll();
+        Input in = new StubInput(new String[] {"0", "1"});
+        UserAction[] actions = {
+                new ShowAction(out),
+                new ExitAction(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(out.toString(), is(
+                "Menu:" + ln
+                        + "0. Show all items" + ln
+                        + "1. Exit Program" + ln
+                        + "Show all items..." + ln
+                        + add.toString() + ln
+                        + "Menu:" + ln
+                        + "0. Show all items" + ln
+                        + "1. Exit Program" + ln
+        ));
+    }
+
+    @Test
     public void whenFindByIdAction() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
@@ -72,6 +99,31 @@ public class StartUITest {
     }
 
     @Test
+    public void whenFindByIdActionThenFindedOne() {
+        Output out = new StubOutput();
+        Tracker tracker = new Tracker();
+        Item add = tracker.add(new Item("New Item"));
+        Item item = tracker.findById(1);
+        Input in = new StubInput(new String[] {"0", String.valueOf(item.getId()), "1"});
+        UserAction[] actions = {
+                new FindIdAction(out),
+                new ExitAction(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(out.toString(), is(
+                "Menu:" + ln
+                        + "0. Find item by id" + ln
+                        + "1. Exit Program" + ln
+                        + "Find item by id..." + ln
+                        + add.toString() + ln
+                        + "Menu:" + ln
+                        + "0. Find item by id" + ln
+                        + "1. Exit Program" + ln
+        ));
+    }
+
+    @Test
     public void whenFindByNameAction() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
@@ -89,6 +141,31 @@ public class StartUITest {
                         + "1. Exit Program" + ln
                         + "Find items by name..." + ln
                         + "Not found name: " + "Addy" + ln
+                        + "Menu:" + ln
+                        + "0. Find items by name" + ln
+                        + "1. Exit Program" + ln
+        ));
+    }
+
+    @Test
+    public void whenFindByNameActionThenFindedOne() {
+        Output out = new StubOutput();
+        Tracker tracker = new Tracker();
+        Item add = tracker.add(new Item("Addy"));
+        Item[] item = tracker.findByName("Addy");
+        Input in = new StubInput(new String[] {"0", String.valueOf(add.getName()), "1"});
+        UserAction[] actions = {
+                new FindNameAction(out),
+                new ExitAction(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(out.toString(), is(
+                "Menu:" + ln
+                        + "0. Find items by name" + ln
+                        + "1. Exit Program" + ln
+                        + "Find items by name..." + ln
+                        + "[Lru.job4j.tracker.Item;@1bc6a36e" + ln
                         + "Menu:" + ln
                         + "0. Find items by name" + ln
                         + "1. Exit Program" + ln
