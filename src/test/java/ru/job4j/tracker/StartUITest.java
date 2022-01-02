@@ -165,7 +165,7 @@ public class StartUITest {
                         + "0. Find items by name" + ln
                         + "1. Exit Program" + ln
                         + "Find items by name..." + ln
-                        + "[Lru.job4j.tracker.Item;@1bc6a36e" + ln
+                        + "[Lru.job4j.tracker.Item;@5056dfcb" + ln
                         + "Menu:" + ln
                         + "0. Find items by name" + ln
                         + "1. Exit Program" + ln
