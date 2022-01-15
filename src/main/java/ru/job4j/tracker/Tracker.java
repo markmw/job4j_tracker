@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Tracker {
-    private final List<Item> items = new ArrayList<Item>(100);
+    private final List<Item> items = new ArrayList<Item>();
     private int ids = 1;
 
     private int indexOf(int id) {
