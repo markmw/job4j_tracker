@@ -2,8 +2,19 @@ package ru.job4j.tracker.bank;
 
 import java.util.Objects;
 
+/**
+ * Класс описывает модель пользователя банка
+ * @author adletbaitorynov
+ * @version 1.0
+ */
 public class User {
+    /**
+     * поле passport содержит номер паспорта пользователя
+     */
     private String passport;
+    /**
+     * поле username содержит ФИО пользователя
+     */
     private String username;
 
     public User(String passport, String username) {
@@ -27,6 +38,11 @@ public class User {
         this.username = username;
     }
 
+    /**
+     * Обобщенный переопределенный метод equals
+     * @param o обьект
+     * @return возвращает булево значение - true или false
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -39,6 +55,10 @@ public class User {
         return Objects.equals(passport, user.passport);
     }
 
+    /**
+     * Обобщенный переопределенный метод hashCode
+     * @return возвращает целочисленное значение(хэш) поля паспорт
+     */
     @Override
     public int hashCode() {
         return Objects.hash(passport);
