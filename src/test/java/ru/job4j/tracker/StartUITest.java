@@ -1,9 +1,7 @@
 package ru.job4j.tracker;
 
 import org.junit.Test;
-import ru.job4j.tracker.ex.User;
 
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +16,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[] {"0", "Item name", "1"}
         );
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Output out = new StubOutput();
         List<UserAction> actions = new ArrayList<UserAction>();
         actions.add(new CreateAction(out));
@@ -30,7 +28,7 @@ public class StartUITest {
     @Test
     public void whenShowAllActions() {
         Output out = new StubOutput();
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         List<Item> item = tracker.findAll();
         Input in = new StubInput(new String[] {"0", "1"});
         List<UserAction> actions = new ArrayList<UserAction>();
@@ -53,7 +51,7 @@ public class StartUITest {
     @Test
     public void whenShowAllActionsThenOneShowed() {
         Output out = new StubOutput();
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item add = tracker.add(new Item("Item name"));
         List<Item> item = tracker.findAll();
         Input in = new StubInput(new String[] {"0", "1"});
@@ -77,7 +75,7 @@ public class StartUITest {
     @Test
     public void whenFindByIdAction() {
         Output out = new StubOutput();
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item item = tracker.findById(1);
         Input in = new StubInput(new String[] {"0", "1", "1"});
         List<UserAction> actions = new ArrayList<UserAction>();
@@ -100,7 +98,7 @@ public class StartUITest {
     @Test
     public void whenFindByIdActionThenFindedOne() {
         Output out = new StubOutput();
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item add = tracker.add(new Item("New Item"));
         Input in = new StubInput(new String[] {"0", String.valueOf(add.getId()), "1"});
         List<UserAction> actions = new ArrayList<UserAction>();
@@ -123,7 +121,7 @@ public class StartUITest {
     @Test
     public void whenFindByNameAction() {
         Output out = new StubOutput();
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         List<Item> item = tracker.findByName("Addy");
         Input in = new StubInput(new String[] {"0", "Addy", "1"});
         List<UserAction> actions = new ArrayList<UserAction>();
@@ -146,7 +144,7 @@ public class StartUITest {
     @Test
     public void whenFindByNameActionThenFindedOne() {
         Output out = new StubOutput();
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item add = tracker.add(new Item("Addy"));
         Input in = new StubInput(new String[] {"0", add.getName(), "1"});
         List<UserAction> actions = new ArrayList<UserAction>();
@@ -169,7 +167,7 @@ public class StartUITest {
     @Test
     public void whenEditItem() {
         Output out = new StubOutput();
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item item = tracker.add(new Item("Edited item"));
         String replacedName = "New item name";
         Input in = new StubInput(
@@ -194,7 +192,7 @@ public class StartUITest {
 
     @Test
     public void whenDeleteItem() {
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item item = tracker.add(new Item("Deleted item"));
         Output out = new StubOutput();
         Input in = new StubInput(
@@ -213,7 +211,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[] {"0"}
         );
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         List<UserAction> actions = new ArrayList<UserAction>();
         actions.add(new ExitAction(out));
         new StartUI(out).init(in, tracker, actions);
@@ -229,10 +227,10 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[] {"7", "0"}
         );
-        Tracker tracker = new Tracker();
+        MemTracker memTracker = new MemTracker();
         List<UserAction> actions = new ArrayList<UserAction>();
         actions.add(new ExitAction(out));
-        new StartUI(out).init(in, tracker, actions);
+        new StartUI(out).init(in, memTracker, actions);
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(
                         "Menu:" + ln

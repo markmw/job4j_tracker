@@ -13,12 +13,12 @@ public class EditAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, Store store) {
         out.println("Edit item...");
         int id = input.askInt("Enter id: ");
         String forename = input.askStr("Enter name: ");
         Item point = new Item(forename);
-        if (tracker.replace(id, point)) {
+        if (store.replace(id, point)) {
             out.println("Well done!");
         } else {
             out.println("Ops..try again");
