@@ -1,5 +1,6 @@
 package ru.job4j.tracker;
 
+import java.sql.ResultSet;
 import java.util.List;
 
 public interface Store {
@@ -14,4 +15,6 @@ public interface Store {
     List<Item> findByName(String key);
 
     Item findById(int id);
+
+    Item select(ResultSet resultSet);
 }

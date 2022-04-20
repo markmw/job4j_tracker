@@ -28,10 +28,6 @@ public class Item implements Comparable<Item> {
         this.created = created;
     }
 
-    public LocalDateTime getCreated() {
-        return created;
-    }
-
     public int getId() {
         return id;
     }
@@ -46,6 +42,14 @@ public class Item implements Comparable<Item> {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public LocalDateTime getCreated() {
+        return created;
+    }
+
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
     }
 
     @Override

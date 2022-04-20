@@ -1,5 +1,6 @@
 package ru.job4j.tracker;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,6 +46,11 @@ public class MemTracker implements Store {
     public Item findById(int id) {
         int index = indexOf(id);
         return index != -1 ? items.get(index) : null;
+    }
+
+    @Override
+    public Item select(ResultSet resultSet) {
+        return null;
     }
 
     @Override
