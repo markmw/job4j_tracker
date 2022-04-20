@@ -49,11 +49,6 @@ public class MemTracker implements Store {
     }
 
     @Override
-    public Item select(ResultSet resultSet) {
-        return null;
-    }
-
-    @Override
     public boolean replace(int id, Item item) {
         int index = indexOf(id);
         boolean rsl = index != -1;
