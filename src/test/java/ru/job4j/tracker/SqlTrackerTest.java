@@ -17,7 +17,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 public class SqlTrackerTest {
-    static Connection connection;
+    private static Connection connection;
 
     @BeforeClass
     public static void initConnection() {
@@ -61,7 +61,8 @@ public class SqlTrackerTest {
         SqlTracker tracker = new SqlTracker(connection);
         Item item = new Item("item");
         tracker.add(item);
-        assertTrue(tracker.delete(item.getId()));
+        tracker.delete(item.getId());
+        assertEquals(null, tracker.findById(item.getId()));
     }
 
     @Test
