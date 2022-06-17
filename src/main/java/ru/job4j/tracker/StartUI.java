@@ -36,29 +36,14 @@ public class StartUI {
         Input input = new ValidateInput(output, new ConsoleInput());
         MemTracker tracker = new MemTracker();
         List<UserAction> actions = List.of(
-                new CreateAction(output),
+                new CreateItems(output),
                 new EditAction(output),
-                new DeleteAction(output),
+                new DeleteItems(output),
                 new ShowAction(output),
                 new FindIdAction(output),
                 new FindNameAction(output),
                 new ExitAction(output)
         );
         new StartUI(output).init(input, tracker, actions);
-
-        MemTracker tracker1 = new MemTracker();
-        for (int i = 0; i < 100000; i++) {
-            tracker1.add(new Item("asd" + i));
-            tracker1.add(new Item("asdd" + i));
-            tracker1.add(new Item("asddd" + i));
-            tracker1.add(new Item("asdddd" + i));
-            tracker1.add(new Item("asddddd" + i));
-            tracker1.add(new Item("asdddddd" + i));
-            tracker1.add(new Item("asddddddd" + i));
-            tracker1.replace(i, new Item("asdasd "));
-            tracker1.delete(i + 1);
-            tracker1.findById(i + 3);
-            tracker1.findAll();
-        }
     }
 }
