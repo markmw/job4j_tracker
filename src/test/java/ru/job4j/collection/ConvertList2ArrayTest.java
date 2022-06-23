@@ -1,7 +1,6 @@
 package ru.job4j.collection;
 
 import org.junit.Test;
-import ru.job4j.collection.ConvertList2Array;
 
 import java.util.Arrays;
 import static org.hamcrest.core.Is.is;

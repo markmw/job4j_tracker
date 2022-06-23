@@ -1,8 +1,6 @@
 package ru.job4j.collection;
 
 import org.junit.Test;
-import ru.job4j.collection.FullSearch;
-import ru.job4j.collection.Task;
 
 import java.util.Arrays;
 import java.util.HashSet;

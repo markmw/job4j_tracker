@@ -1,7 +1,6 @@
 package ru.job4j.collection;
 
 import org.junit.Test;
-import ru.job4j.collection.LexSort;
 
 import java.util.Arrays;
 
