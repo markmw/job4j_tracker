@@ -1,11 +1,13 @@
 package ru.job4j.tracker;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @Data
+@EqualsAndHashCode(of = "name")
 public class Item implements Comparable<Item> {
     private int id;
     private String name;

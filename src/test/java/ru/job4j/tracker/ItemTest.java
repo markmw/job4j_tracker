@@ -14,12 +14,12 @@ public class ItemTest {
                 new Item(2, "Mouse"),
                 new Item(8, "Headphones")
         );
+        Collections.sort(items);
         List<Item> expected = Arrays.asList(
                 new Item(2, "Mouse"),
                 new Item(7, "Keyboard"),
                 new Item(8, "Headphones")
         );
-        Collections.sort(items);
         assertEquals(items, expected);
     }
 
