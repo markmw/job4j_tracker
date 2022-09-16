@@ -1,0 +1,1 @@
+<include file="scripts/update_003.sql" relativeToChangelogFile="true"/>
